@@ -1,6 +1,6 @@
 {
   "name": "positionally",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A 2d language where there are no commands",
   "main": "main.js",
   "scripts": {

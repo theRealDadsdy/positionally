@@ -24,6 +24,8 @@ let positionally = (code, inputs = [], flags = '', output = x => process.stdout.
                 } else if (this.inputs.length) {
                     ret.push(this.inputs[0])
                     this.inputs.push(this.inputs.shift());
+                } else {
+                    ret.push(0)
                 }
             }
             return ret;
