@@ -41,9 +41,10 @@ let positionally = (code, inputs = [], flags = '', output = x => process.stdout.
     if (flags.includes('s')) {
         output(`${code.map((row, y) => 
             row.map((cell, x) => 
-                cell == ' ' ? normalise(x, y) : ''
+                cell == ' ' ? ' ' : normalise(x, y)
             ).join``).join('\n')
         }\n`);
+        return;
     }
 
     for (let row = 0; row < code.length; row++) {
@@ -73,9 +74,9 @@ let positionally = (code, inputs = [], flags = '', output = x => process.stdout.
                 } else if (skip) {
                     skip = false;
                 } else {
-                    if (char == '/') {
+                    if (char == '\\') {
                         ip.dir ^= 1;
-                    } else if (char == '\\') {
+                    } else if (char == '/') {
                         ip.dir ^= 3;
                     } else if ('>v<^'.includes(char)) {
                         ip.dir = '>v<^'.indexOf(char);
@@ -135,16 +136,20 @@ let positionally = (code, inputs = [], flags = '', output = x => process.stdout.
                         push(a + b);
                     } else if (char == '-') {
                         let [a, b] = pop(2);
-                        push(a - b);
+                        push(b - 1);
                     } else if (char == '*') {
                         let [a, b] = pop(2);
                         push(a * b);
                     } else if (char == '%') {
                         let [a, b] = pop(2);
-                        push(a % b);
+                        push(b % a);
                     } else if (char == 'd') {
                         let [a, b] = pop(2);
-                        push(a / b | 0);
+                        push(b / a | 0);
+                    } else if (char == '}') {
+                        ip.stack.unshift(pop())
+                    } else if (char == '{') {
+                        ip.stack.push(ip.stack.shift())
                     }
                 }
             }
