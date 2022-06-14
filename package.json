@@ -1,0 +1,23 @@
+{
+  "name": "positionally",
+  "version": "1.0.0",
+  "description": "A 2d language where there are no commands",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chunkybanana/positionally.git"
+  },
+  "keywords": [
+    "2d",
+    "esolang"
+  ],
+  "author": "Chunkybanana",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chunkybanana/positionally/issues"
+  },
+  "homepage": "https://github.com/chunkybanana/positionally#readme"
+}
