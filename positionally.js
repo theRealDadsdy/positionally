@@ -1,4 +1,4 @@
-let positional = (code, inputs = [], flags = '', output = x => process.stdout.write(x)) => {
+let positionally = (code, inputs = [], flags = '', output = x => process.stdout.write(x)) => {
     code = code.split('\n'), ips = [];
 
     let maxlength = Math.max(...code.map(x => x.length));
@@ -171,7 +171,7 @@ let positional = (code, inputs = [], flags = '', output = x => process.stdout.wr
 }
 
 if (typeof module != 'undefined' && module?.exports) {
-    module.exports = positional;
+    module.exports = positionally;
 } else {
-    window.positional = positional;
+    window.positionally = positionally;
 }
