@@ -2,6 +2,8 @@
 
 Positionally is a 2d language in which only the presence and lack of commands matter. What command is executed depends on the instruction pointer's location.
 
+IPs are spawned at the `@` instruction in the grid below, if this doesn't exist one is spawned at (0, 0).
+
 ## Commands
 
 ```
@@ -14,6 +16,8 @@ v()~{};<
 \=sjpgS/
 \\^<^>//
 ```
+
+This grid repeats forever, so the IP's x/y are taken modulo 8 to get the commands.
 
 `<>^v\/` - What you'd expect
 `0-9` - single numbers
@@ -36,3 +40,4 @@ v()~{};<
 `g` - Pop two numbers and get char at point
 `S` - Unconditionally skip next instruction
 `&|` - push/pop global stack 
+
