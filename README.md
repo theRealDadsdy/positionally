@@ -23,7 +23,7 @@ This grid repeats forever, so the IP's x/y are taken modulo 8 to get the command
 `0-9` - Pushes 0-9 onto the stack.  
 `+-*%d` - Maths operations.  
 `@` - an IP starts here, going right.  
-`?` - Take input terminated with -1, cycling.  
+`?` - Take input terminated with 0, cycling.  
 `.` - Print as char.  
 `,` - Print as num.  
 `:` - Duplicate.  
