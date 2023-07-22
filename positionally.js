@@ -4,7 +4,7 @@ let positionally = (code, inputs = [], flags = '', output = x => process.stdout.
     let maxlength = Math.max(...code.map(x => x.length));
     code = code.map(x => x.padEnd(maxlength, ' ').split``);
 
-    inputs = inputs.flatMap(x => typeof x == 'string' ? x.split``.map(x => x.charCodeAt()) : x);
+    inputs = inputs.flatMap(x => typeof x == 'string' ? x.split``.map(x => x.charCodeAt()).concat(-1) : x);
     inputs.push(-1)
 
     class Ip {
@@ -146,7 +146,7 @@ let positionally = (code, inputs = [], flags = '', output = x => process.stdout.
                         push(b % a);
                     } else if (char == 'd') {
                         let [a, b] = pop(2);
-                        push(b / a || 0);
+                        push(b / a | 0);
                     } else if (char == '}') {
                         ip.stack.unshift(pop())
                     } else if (char == '{') {
