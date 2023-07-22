@@ -19,19 +19,19 @@ v()~{};<
 
 This grid repeats forever, so the IP's x/y are taken modulo 8 to get the commands.
 
-`<>^v\/` - What you'd expect.  
-`0-9` - single numbers.  
+`<>^v\/` - Turns the IP or mirrors the IP.  
+`0-9` - Pushes 0-9 onto the stack.  
 `+-*%d` - Maths operations.  
 `@` - an IP starts here, going right.  
-`?` - Take input (-1 at EOF, but cycling).  
+`?` - Take input terminated with -1, cycling.  
 `.` - Print as char.  
-`,` - print as num.  
-`:` - dup.  
+`,` - Print as num.  
+`:` - Duplicate.  
 `"` - stringmode (record nonspaces until next at pos).  
-`$` - swap.  
-`()` - less/greater.  
-`~` - pop.  
-`{}` - shift left/right.  
+`$` - Swap the top elements of the stack.  
+`()` - less/greater than.  
+`~` - Pop and ignore.  
+`{}` - Roll the stack left/right.  
 `;` - Terminate IP.  
 `=` - Test equality.    
 `s` - Skip next op if nonzero.  
