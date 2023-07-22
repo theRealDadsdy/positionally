@@ -112,7 +112,7 @@ let positionally = (code, inputs = [], flags = '', output = x => process.stdout.
                     } else if (char == '~') {
                         pop();
                     } else if (char == 's') {
-                        if (pop()) skip = true;
+                        if (pop()[0]) skip = true;
                     } else if (char == 'j') {
                         let [X, Y] = pop(2);
                         ip.x = X;
