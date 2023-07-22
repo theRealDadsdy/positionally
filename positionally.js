@@ -4,8 +4,8 @@ let positionally = (code, inputs = [], flags = '', output = x => process.stdout.
     let maxlength = Math.max(...code.map(x => x.length));
     code = code.map(x => x.padEnd(maxlength, ' ').split``);
 
-    inputs = inputs.flatMap(x => typeof x == 'string' ? x.split``.map(x => x.charCodeAt()).concat(-1) : x);
-    inputs.push(-1)
+    inputs = inputs.flatMap(x => typeof x == 'string' ? x.split``.map(x => x.charCodeAt()).concat(0) : x);
+    inputs.push(0)
 
     class Ip {
         constructor (x, y) {
