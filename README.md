@@ -22,7 +22,7 @@ This grid repeats forever, so the IP's x/y are taken modulo 8 to get the command
 `<>^v\/` - What you'd expect.  
 `0-9` - single numbers.  
 `+-*%d` - Maths operations.  
-`@` - an IP starts here.  
+`@` - an IP starts here, going right.  
 `?` - Take input (-1 at EOF, but cycling).  
 `.` - Print as char.  
 `,` - print as num.  
