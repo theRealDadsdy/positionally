@@ -20,9 +20,9 @@ let positionally = (code, inputs = [], flags = '', output = x => process.stdout.
             let ret = [];
             for (let i = 0; i < num; i++) {
                 if (this.stack.length) {
-                    ret.push(this.stack.pop());
+                    ret.push(+this.stack.pop());
                 } else if (this.inputs.length) {
-                    ret.push(this.inputs[0])
+                    ret.push(+this.inputs[0])
                     this.inputs.push(this.inputs.shift());
                 } else {
                     ret.push(0)
